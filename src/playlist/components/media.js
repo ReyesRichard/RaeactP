@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types"
 import './media.css'
 
 class Media extends Component{
@@ -30,10 +30,10 @@ class Media extends Component{
     }
 }
 
-// Media.propTypes = {
-//     image: PropType.string,
-//     title: PropType.string,  
-//     autor: PropType.string,
-// }
+Media.propTypes = {
+    image: PropTypes.string,
+    title: PropTypes.string,  
+    autor: PropTypes.string,
+}
 
 export default Media
