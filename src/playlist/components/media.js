@@ -45,12 +45,13 @@ class Media extends Component{
             <div className="Media" onClick={this.handleClick}>
                 <div>
                     <img 
-                        src={this.props.image} 
+                        src={this.props.cover} 
                         alt=""
                         width={260}
                         heigth={160}/>
                     <h3>{this.props.title}</h3>
-                    <p>{this.state.autor}</p>
+                    {/* <p>{this.state.author}</p> */}
+                     <p>{this.props.author}</p> 
                 </div>
             </div>
         )
@@ -58,9 +59,9 @@ class Media extends Component{
 }
 
 Media.propTypes = {
-    image: PropTypes.string,
+    cover: PropTypes.string,
     title: PropTypes.string,  
-    autor: PropTypes.string,
+    author: PropTypes.string,
 }
 
 export default Media
