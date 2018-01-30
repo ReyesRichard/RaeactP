@@ -3,6 +3,33 @@ import PropTypes from "prop-types"
 import './media.css'
 
 class Media extends Component{
+    state = {
+        autor: 'Ricardo P'
+    }
+    // constructor(props){
+    //     //Cacha las propiedades
+    //     super(props)
+    //     //Para mutar propiedades
+    //     this.state = {
+    //         autor: props.autor,
+    //     }
+    //     //Pasa la funcion de un evento en el render del componente
+    //     // this.handleClick = this.handleClick.bind(this)
+    // }
+    // handleClick(event){
+    //     // console.log(event)
+    //     console.log(this.props.title)
+    // }
+
+    //EcmaScript7 Para pasar todos las funciones que se generarn sin neccesidad del constructor
+    handleClick = (event) => {
+        // console.log(this.props.title)
+        this.setState({
+            autor: 'Pepe Pecas',
+            // autor: this.props.autor,
+
+        })
+    }
     render(){
         const styles = {
             container:{
@@ -15,7 +42,7 @@ class Media extends Component{
             }
         }
         return (
-            <div className="Media">
+            <div className="Media" onClick={this.handleClick}>
                 <div>
                     <img 
                         src={this.props.image} 
@@ -23,7 +50,7 @@ class Media extends Component{
                         width={260}
                         heigth={160}/>
                     <h3>{this.props.title}</h3>
-                    <p>{this.props.autor}</p>
+                    <p>{this.state.autor}</p>
                 </div>
             </div>
         )
